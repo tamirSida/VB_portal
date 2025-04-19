@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             subfolders: [
                 { name: "Participants", icon: "fa-solid fa-users", href: "https://drive.google.com/drive/folders/12Mj0rv-RijDhpOH_7oIguzYlVxpGkGq_?usp=sharing" },
                 { name: "Staff", icon: "fa-solid fa-user-tie", href: "https://drive.google.com/drive/folders/1jgr9DIE7oCjiLpnFBEIs_2jWZcHWf82R?usp=sharing" },
-                { name: "Classroom", icon: "fa-solid fa-chalkboard-teacher", href: "placeholder.html" }
+                { name: "Classroom", icon: "fa-solid fa-chalkboard-teacher", href: "https://classroom.google.com/c/NzcyNzM0MTQ3ODQ1?cjc=66bhe7il" }
             ]
         },
         staff: {

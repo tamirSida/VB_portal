@@ -60,7 +60,7 @@ header {
 
 .header-content {
     display: flex;
-    justify-content: center; /* Center the logo now that nav is removed */
+    justify-content: flex-start; /* Align to the left */
     align-items: center;
 }
 
@@ -112,27 +112,22 @@ nav a.active, nav a:hover {
 
 /* Welcome Section */
 .welcome-section {
-    margin: 4rem 0 3rem;
+    margin: 3rem 0;
     text-align: center;
 }
 
 .welcome-section h1 {
     font-size: 2.5rem;
-    color: var(--text-dark);
-    margin-bottom: 1.2rem;
-    font-weight: 600;
-    background: linear-gradient(to right, var(--primary-dark), var(--primary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
+    color: var(--primary); /* Navy blue color */
+    margin-bottom: 1rem;
+    font-weight: 500;
 }
 
 .welcome-section p {
     font-size: 1.1rem;
     max-width: 600px;
-    margin: 0 auto 1.5rem;
-    color: var(--medium-gray);
-    line-height: 1.7;
+    margin: 0 auto;
+    color: var(--primary); /* Navy blue color */
 }
 
 .welcome-decoration {
@@ -274,35 +269,35 @@ nav a.active, nav a:hover {
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
 }
 
-/* Folder body variations with distinct colors */
+/* Folder body variations with dark blue palette gradients */
 .folder[data-folder="cohort1"] .folder-body {
-    background-color: var(--folder-blue);
-    background-image: linear-gradient(135deg, var(--folder-blue), #2b6cb0);
-    box-shadow: 0 0 20px rgba(37, 99, 235, 0.15) inset;
+    background-color: #0a2463; /* Main navy blue */
+    background-image: linear-gradient(135deg, #0a2463, #1c4587);
+    box-shadow: 0 0 20px rgba(10, 36, 99, 0.2) inset;
 }
 
 .folder[data-folder="cohort2"] .folder-body {
-    background-color: var(--folder-green);
-    background-image: linear-gradient(135deg, var(--folder-green), #059669);
-    box-shadow: 0 0 20px rgba(16, 185, 129, 0.15) inset;
+    background-color: #1a3a7a; /* Slightly lighter navy */
+    background-image: linear-gradient(135deg, #1a3a7a, #2d5cb9);
+    box-shadow: 0 0 20px rgba(26, 58, 122, 0.2) inset;
 }
 
 .folder[data-folder="cohort3"] .folder-body {
-    background-color: var(--folder-yellow);
-    background-image: linear-gradient(135deg, var(--folder-yellow), #d97706);
-    box-shadow: 0 0 20px rgba(245, 158, 11, 0.15) inset;
+    background-color: #224c99; /* Medium navy blue */
+    background-image: linear-gradient(135deg, #224c99, #3561b8);
+    box-shadow: 0 0 20px rgba(34, 76, 153, 0.2) inset;
 }
 
 .folder[data-folder="cohort4"] .folder-body {
-    background-color: var(--folder-red);
-    background-image: linear-gradient(135deg, var(--folder-red), #dc2626);
-    box-shadow: 0 0 20px rgba(239, 68, 68, 0.15) inset;
+    background-color: #19326e; /* Deeper navy blue */
+    background-image: linear-gradient(135deg, #19326e, #2a4798);
+    box-shadow: 0 0 20px rgba(25, 50, 110, 0.2) inset;
 }
 
 .staff-folder .folder-body {
-    background-color: var(--folder-purple);
-    background-image: linear-gradient(135deg, var(--folder-purple), #7c3aed);
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.15) inset;
+    background-color: #0d1b45; /* Darkest navy blue */
+    background-image: linear-gradient(135deg, #0d1b45, #1e3173);
+    box-shadow: 0 0 20px rgba(13, 27, 69, 0.2) inset;
 }
 
 /* Add subtle pattern to folders */
@@ -320,23 +315,23 @@ nav a.active, nav a:hover {
 
 /* Folder tab variations */
 .folder[data-folder="cohort1"] .folder-tab {
-    background-color: #1e40af;
+    background-color: #0a2463;
 }
 
 .folder[data-folder="cohort2"] .folder-tab {
-    background-color: #047857;
+    background-color: #1a3a7a;
 }
 
 .folder[data-folder="cohort3"] .folder-tab {
-    background-color: #b45309;
+    background-color: #224c99;
 }
 
 .folder[data-folder="cohort4"] .folder-tab {
-    background-color: #b91c1c;
+    background-color: #19326e;
 }
 
 .staff-folder .folder-tab {
-    background-color: #6d28d9;
+    background-color: #0d1b45;
 }
 
 .folder-name {
@@ -382,42 +377,60 @@ nav a.active, nav a:hover {
 
 .modal-content {
     background-color: var(--white);
-    margin: 5% auto;
+    margin: 4% auto;
     padding: 2.5rem;
-    width: 85%;
-    max-width: 900px;
-    border-radius: 16px;
-    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 15px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     position: relative;
-    border: 1px solid rgba(37, 99, 235, 0.1);
-    transform: translateY(0);
-    animation: modalAppear 0.3s ease-out;
+    border: 1px solid rgba(10, 36, 99, 0.1);
 }
 
-@keyframes modalAppear {
-    from { 
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to { 
-        opacity: 1;
-        transform: translateY(0);
-    }
+.modal-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(10, 36, 99, 0.1);
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-left: 1.2rem;
+    font-weight: 500;
+}
+
+.modal-icon {
+    font-size: 2.2rem;
+    color: var(--primary);
+}
+
+.modal-icon i {
+    color: var(--primary) !important;
 }
 
 .close-modal {
     position: absolute;
-    top: 1rem;
-    right: 1.5rem;
+    top: 1.5rem;
+    right: 1.8rem;
     font-size: 2rem;
     font-weight: bold;
     color: var(--text-dark);
     cursor: pointer;
     transition: var(--transition);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
 
 .close-modal:hover {
     color: var(--primary);
+    background-color: rgba(10, 36, 99, 0.05);
 }
 
 /* Subfolder Container */
@@ -428,42 +441,64 @@ nav a.active, nav a:hover {
     margin-top: 1.5rem;
 }
 
-/* Two column layout specifically for staff folder */
+/* Improved grid layout for staff folder */
 .two-column-layout {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2.5rem 3rem;
-    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+    max-width: 900px;
     margin: 2rem auto 0;
 }
 
 .two-column-layout .subfolder {
-    flex: 0 0 calc(50% - 3rem);
-    max-width: 280px;
-    padding: 2rem 1.5rem;
+    flex: none;
+    width: 100%;
+    max-width: none;
+    padding: 1.5rem;
     background-color: white;
-    box-shadow: 0 10px 30px -10px rgba(10, 36, 99, 0.1);
-    border-radius: 12px;
+    box-shadow: 0 6px 16px -6px rgba(10, 36, 99, 0.15);
+    border-radius: 8px;
     transition: all 0.3s ease;
     border: 1px solid rgba(10, 36, 99, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .two-column-layout .subfolder:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 15px 35px -12px rgba(10, 36, 99, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -8px rgba(10, 36, 99, 0.2);
     border-color: rgba(10, 36, 99, 0.1);
 }
 
 .two-column-layout .mac-subfolder {
-    width: 90px;
-    height: 70px;
-    margin-bottom: 1.2rem;
+    width: 70px;
+    height: 55px;
+    margin-bottom: 1rem;
 }
 
 .two-column-layout .subfolder-name {
-    color: var(--text-dark);
+    font-size: 0.9rem;
     font-weight: 500;
+    color: var(--text-dark);
+    text-align: center;
+    margin-top: 0.6rem;
+    line-height: 1.3;
+}
+
+.two-column-layout .subfolder-tab {
+    left: 12px;
+    width: 20px;
+    height: 8px;
+}
+
+.two-column-layout .subfolder-body {
+    height: 48px;
+}
+
+.two-column-layout .subfolder-content {
+    font-size: 1.1rem;
 }
 
 .subfolder {
@@ -500,7 +535,7 @@ nav a.active, nav a:hover {
     left: 14px;
     width: 25px;
     height: 10px;
-    background-color: var(--primary-dark);
+    background-color: #0d1b45;
     border-radius: 3px 3px 0 0;
     z-index: 2;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset;
@@ -511,7 +546,7 @@ nav a.active, nav a:hover {
     top: 7px;
     width: 100%;
     height: 53px;
-    background-color: var(--primary);
+    background-color: #0a2463;
     border-radius: 3px;
     box-shadow: 
         0 3px 10px rgba(0, 0, 0, 0.15),
@@ -568,7 +603,7 @@ nav a.active, nav a:hover {
 .yellow-folder,
 .red-folder,
 .purple-folder {
-    background-color: var(--primary);
+    background-color: #0a2463; /* All use navy blue */
 }
 
 .subfolder-name {
@@ -587,31 +622,6 @@ footer {
     padding: 2rem 0;
     margin-top: 4rem;
     box-shadow: 0 -1px 0 0 rgba(255, 255, 255, 0.1);
-}
-
-/* Modal Header */
-.modal-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(10, 36, 99, 0.1);
-}
-
-.modal-title {
-    font-size: 1.8rem;
-    color: var(--text-dark);
-    margin-left: 1.2rem;
-    font-weight: 500;
-}
-
-.modal-icon {
-    font-size: 2.2rem;
-    color: var(--primary);
-}
-
-.modal-icon i {
-    color: var(--primary) !important;
 }
 
 /* Responsive */
@@ -765,25 +775,22 @@ footer {
     }
 }
 
-/* Enhance staff folder subfolders */
-.two-column-layout .mac-subfolder {
-    width: 90px;
-    height: 70px;
-    margin-bottom: 1.2rem;
+/* Responsive styling for staff folder grid */
+@media (max-width: 900px) {
+    .two-column-layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.two-column-layout .subfolder-tab {
-    left: 16px;
-    width: 28px;
-    height: 12px;
-}
-
-.two-column-layout .subfolder-body {
-    height: 64px;
-}
-
-.two-column-layout .subfolder-content {
-    font-size: 1.3rem;
+@media (max-width: 550px) {
+    .two-column-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .two-column-layout .subfolder {
+        max-width: 280px;
+        margin: 0 auto;
+    }
 }
 
 /* Improved folder content */
