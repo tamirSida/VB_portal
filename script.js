@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Folder not found');
             return;
         }
+
         
         // Create modal header
         const modalHeader = document.createElement('div');
