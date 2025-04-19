@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Cohort #2",
             color: "blue",
             subfolders: [
-                { name: "Participants", icon: "fa-solid fa-users", href: "https://drive.google.com/drive/folders/1jgr9DIE7oCjiLpnFBEIs_2jWZcHWf82R?usp=sharing" },
-                { name: "Staff", icon: "fa-solid fa-user-tie", href: "https://drive.google.com/drive/folders/1jgr9DIE7oCjiLpnFBEIs_2jWZcHWf82R?usp=sharing" },
+                { name: "Participants", icon: "fa-solid fa-users", href: "https://drive.google.com/drive/folders/1mEYfaztNSgUYRYJtwWqC7Z5wJXrSR7ZN?usp=sharing" },
+                { name: "Staff", icon: "fa-solid fa-user-tie", href: "https://drive.google.com/drive/folders/1rfkihm4aRmyR0FO9Fg7AtLF0P0bFuSZO?usp=sharing" },
                 { name: "Classroom", icon: "fa-solid fa-chalkboard-teacher", href: "placeholder.html" }
             ]
         },
@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Cohort #3",
             color: "blue",
             subfolders: [
-                { name: "Participants", icon: "fa-solid fa-users", href: "https://drive.google.com/drive/folders/1jgr9DIE7oCjiLpnFBEIs_2jWZcHWf82R?usp=sharing" },
-                { name: "Staff", icon: "fa-solid fa-user-tie", href: "https://drive.google.com/drive/folders/1jgr9DIE7oCjiLpnFBEIs_2jWZcHWf82R?usp=sharing" },
+                { name: "Participants", icon: "fa-solid fa-users", href: "https://drive.google.com/drive/folders/1QJ3ViNdOOnwbN42DI_GAN6Ksv9JK3-J-?usp=sharing" },
+                { name: "Staff", icon: "fa-solid fa-user-tie", href: "https://drive.google.com/drive/folders/16lQE4SJLCi0NFCFsPLaU13_RulKKtwhQ?usp=sharing" },
                 { name: "Classroom", icon: "fa-solid fa-chalkboard-teacher", href: "placeholder.html" }
             ]
         },
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             subfolders: [
                 { name: "Participants", icon: "fa-solid fa-users", href: "https://drive.google.com/drive/folders/12Mj0rv-RijDhpOH_7oIguzYlVxpGkGq_?usp=sharing" },
                 { name: "Staff", icon: "fa-solid fa-user-tie", href: "https://drive.google.com/drive/folders/1jgr9DIE7oCjiLpnFBEIs_2jWZcHWf82R?usp=sharing" },
-                { name: "Classroom", icon: "fa-solid fa-chalkboard-teacher", href: "https://classroom.google.com/c/NzcyNzM0MTQ3ODQ1?cjc=66bhe7il" }
+                { name: "Classroom", icon: "fa-solid fa-chalkboard-teacher", href: "placeholder.html" }
             ]
         },
         staff: {
@@ -49,12 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
             layout: "two-columns",
             subfolders: [
                 { name: "Alumni Relation + Tracking", icon: "fa-solid fa-users-viewfinder", href: "https://drive.google.com/drive/folders/1maO6zRlMfR4FjqHPzo0HZQD6RoC9F7CQ?usp=sharing" },
-                { name: "Finance - Receipts", icon: "fa-solid fa-money-bill-wave", href: "https://drive.google.com/drive/folders/1maO6zRlMfR4FjqHPzo0HZQD6RoC9F7CQ?usp=sharing" },
-                { name: "Marketing & Outreach Materials", icon: "fa-solid fa-bullhorn", href: "https://drive.google.com/drive/folders/1maO6zRlMfR4FjqHPzo0HZQD6RoC9F7CQ?usp=sharing" },
+                { name: "Finance - Receipts", icon: "fa-solid fa-money-bill-wave", href: "https://drive.google.com/drive/folders/1twfuXzdcic_WIbaFKjKdMG2sIaD6_EeS?usp=sharing" },
+                { name: "Marketing & Outreach Materials", icon: "fa-solid fa-bullhorn", href: "https://drive.google.com/drive/folders/1-O9_ITa47KZNOwrGj_XakTJA3Z9LuSHp?usp=sharing" },
                 { name: "Mentorship + Advisory Protocols", icon: "fa-solid fa-handshake", href: "https://drive.google.com/drive/folders/1lpC0iYEIhKFwkkotO9AKCnTo8p67-LgN?usp=sharing" },
                 { name: "Recruiting & Application Protocols", icon: "fa-solid fa-clipboard-check", href: "https://drive.google.com/drive/folders/1agyv_G70_NhKzs1ixQz9jryoUxuecMod?usp=sharing" },
-                { name: "VB Master Curriculum", icon: "fa-solid fa-book", href: "https://drive.google.com/drive/folders/1agyv_G70_NhKzs1ixQz9jryoUxuecMod?usp=sharing" },
-                { name: "Weekly Meeting Notes", icon: "fa-solid fa-clipboard-list", href: "https://drive.google.com/drive/folders/1agyv_G70_NhKzs1ixQz9jryoUxuecMod?usp=sharing" }
+                { name: "VB Master Curriculum", icon: "fa-solid fa-book", href: "https://drive.google.com/drive/folders/1-7LcRrMFI3y5v3vZHkQZyXjYtHNrZhU1?usp=sharing" },
+                { name: "Weekly Meeting Notes", icon: "fa-solid fa-clipboard-list", href: "https://drive.google.com/drive/folders/1yiYrSUNwyh_ILT2syseJ02J35WOtslh8?usp=sharing" }
             ]
         }
     };
