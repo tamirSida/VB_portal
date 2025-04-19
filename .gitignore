@@ -1,0 +1,30 @@
+# macOS system files
+.DS_Store
+
+# WebStorm project files
+.idea/
+*.iml
+
+# Node modules (if you ever add tooling later)
+node_modules/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables (if you add Firebase, Netlify CLI, etc.)
+.env
+.env.*
+
+# Build artifacts (optional, if you start bundling)
+dist/
+build/
+
+#netlify
+.netlify/
+
+# OS-generated files
+Thumbs.db
+
+

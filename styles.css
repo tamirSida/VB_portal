@@ -1,0 +1,726 @@
+/* Portal Styles */
+:root {
+    --primary: #0a2463; /* Navy blue (main brand color) */
+    --primary-light: #1e3a8a; /* Slightly lighter navy blue */
+    --primary-dark: #041950; /* Darker navy blue */
+    --primary-accent: #2a4494; /* Navy blue accent */
+    --text: #ffffff; /* Light text for contrast */
+    --text-dark: #0a2463; /* Dark text matching primary */
+    --bg-dark: #041950; /* Dark background */
+    --bg-medium: #0a2463; /* Medium dark background */
+    --bg-light: #2a4494; /* Lighter background */
+    --light-gray: #8b9dc1;
+    --medium-gray: #6b7daf;
+    --white: #fafafa;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --transition: all 0.3s ease;
+    --border-radius: 3px;
+    
+    /* All folders now use navy blue variations */
+    --folder-blue: #0a2463; /* Main navy blue */
+    --folder-green: #0a2463; /* Navy blue */
+    --folder-yellow: #0a2463; /* Navy blue */
+    --folder-red: #0a2463; /* Navy blue */
+    --folder-purple: #0a2463; /* Navy blue */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+}
+
+body {
+    background-color: #f5f5f5; /* Light gray background */
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+/* Header */
+header {
+    background-color: var(--white);
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 10px rgba(10, 36, 99, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center; /* Center the logo now that nav is removed */
+    align-items: center;
+}
+
+/* Logo and branding styling */
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 45px;
+    margin-right: 15px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 0.5rem 0;
+    letter-spacing: 0.5px;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+nav a.active::after, nav a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary);
+}
+
+nav a.active, nav a:hover {
+    color: var(--primary);
+}
+
+/* Welcome Section */
+.welcome-section {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.welcome-section h1 {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.welcome-section p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--text-dark);
+}
+
+/* Folders Container */
+.folders-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+    position: relative;
+}
+
+.folders-container:after {
+    content: '';
+    position: absolute;
+    bottom: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(10, 36, 99, 0.1), transparent);
+}
+
+.folder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    border-radius: 8px;
+    transition: var(--transition);
+    cursor: pointer;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.folder:hover {
+    transform: translateY(-5px) perspective(800px);
+}
+
+.folder-icon {
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+/* Modern high-tech folder styling */
+.mac-folder {
+    position: relative;
+    width: 120px;
+    height: 90px;
+    transform-origin: center;
+    transition: all 0.35s ease;
+    perspective: 800px;
+}
+
+.folder-tab {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 40px;
+    height: 15px;
+    background-color: var(--primary-dark);
+    border-radius: 5px 5px 0 0;
+    z-index: 2;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+}
+
+.folder-body {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    height: 80px;
+    background-color: var(--primary);
+    border-radius: 5px;
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    background-image: 
+        linear-gradient(145deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 30%, rgba(255, 255, 255, 0) 100%),
+        linear-gradient(to bottom, rgba(41, 121, 255, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    overflow: hidden;
+}
+
+/* Futuristic line indicators at the edge of the folder */
+.folder-body:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    z-index: 3;
+    opacity: 0.7;
+    animation: scanLine 3s linear infinite;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.folder-body:after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 10%;
+    width: 80%;
+    height: 12px;
+    background-image: 
+        radial-gradient(circle at 10% 50%, rgba(255, 255, 255, 0.2) 1px, transparent 2px),
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.15) 1px, transparent 2px),
+        radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.2) 1px, transparent 2px),
+        radial-gradient(circle at 40% 50%, rgba(255, 255, 255, 0.15) 1px, transparent 2px),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2) 1px, transparent 2px),
+        radial-gradient(circle at 60% 50%, rgba(255, 255, 255, 0.15) 1px, transparent 2px),
+        radial-gradient(circle at 70% 50%, rgba(255, 255, 255, 0.2) 1px, transparent 2px),
+        radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.15) 1px, transparent 2px),
+        radial-gradient(circle at 90% 50%, rgba(255, 255, 255, 0.2) 1px, transparent 2px);
+    border-radius: 1px;
+    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.subfolder-body:after {
+    height: 6px;
+    bottom: 6px;
+}
+
+/* Add glow effect to folder icons */
+.folder-content i,
+.subfolder-content i {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.folder:hover .folder-content i {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+}
+
+/* Folder body variations for subtle differences */
+.folder[data-folder="cohort1"] .folder-body {
+    background-color: var(--primary);
+}
+
+.folder[data-folder="cohort2"] .folder-body {
+    background-color: var(--primary-light);
+}
+
+.folder[data-folder="cohort3"] .folder-body {
+    background-color: var(--primary);
+}
+
+.folder[data-folder="cohort4"] .folder-body {
+    background-color: var(--primary-accent);
+}
+
+.staff-folder .folder-body {
+    background-color: var(--primary-dark);
+}
+
+/* Folder tab variations */
+.folder[data-folder="cohort1"] .folder-tab,
+.folder[data-folder="cohort2"] .folder-tab,
+.folder[data-folder="cohort3"] .folder-tab,
+.folder[data-folder="cohort4"] .folder-tab,
+.staff-folder .folder-tab {
+    background-color: inherit;
+}
+
+.folder-name {
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-top: 0.8rem;
+    color: var(--text-dark);
+    letter-spacing: 0.5px;
+}
+
+/* Modal for Subfolders */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 20;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 5% auto;
+    padding: 2.5rem;
+    width: 85%;
+    max-width: 900px;
+    border-radius: 15px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    position: relative;
+    border: 1px solid rgba(10, 36, 99, 0.1);
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    color: var(--primary);
+}
+
+/* Subfolder Container */
+.subfolder-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Two column layout specifically for staff folder */
+.two-column-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem 3rem;
+    max-width: 800px;
+    margin: 2rem auto 0;
+}
+
+.two-column-layout .subfolder {
+    flex: 0 0 calc(50% - 3rem);
+    max-width: 280px;
+    padding: 2rem 1.5rem;
+    background-color: white;
+    box-shadow: 0 10px 30px -10px rgba(10, 36, 99, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(10, 36, 99, 0.05);
+}
+
+.two-column-layout .subfolder:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px -12px rgba(10, 36, 99, 0.15);
+    border-color: rgba(10, 36, 99, 0.1);
+}
+
+.two-column-layout .mac-subfolder {
+    width: 90px;
+    height: 70px;
+    margin-bottom: 1.2rem;
+}
+
+.two-column-layout .subfolder-name {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.subfolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+.subfolder:hover {
+    transform: translateY(-3px);
+}
+
+/* Subfolder high-tech upgrade */
+.mac-subfolder {
+    position: relative;
+    width: 80px;
+    height: 60px;
+    transform-origin: center;
+    transition: all 0.35s ease;
+    margin-bottom: 0.8rem;
+    perspective: 500px;
+}
+
+.subfolder-tab {
+    position: absolute;
+    top: 0;
+    left: 14px;
+    width: 25px;
+    height: 10px;
+    background-color: var(--primary-dark);
+    border-radius: 3px 3px 0 0;
+    z-index: 2;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset;
+}
+
+.subfolder-body {
+    position: absolute;
+    top: 7px;
+    width: 100%;
+    height: 53px;
+    background-color: var(--primary);
+    border-radius: 3px;
+    box-shadow: 
+        0 3px 10px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    background-image: 
+        linear-gradient(145deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 30%, rgba(255, 255, 255, 0) 100%),
+        linear-gradient(to bottom, rgba(41, 121, 255, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    overflow: hidden;
+}
+
+.subfolder-body:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    z-index: 3;
+    opacity: 0.7;
+    animation: scanLine 3s linear infinite;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+.subfolder-body:after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 10%;
+    width: 80%;
+    height: 12px;
+    background-image: 
+        radial-gradient(circle at 10% 50%, rgba(255, 255, 255, 0.2) 1px, transparent 2px),
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.15) 1px, transparent 2px),
+        radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.2) 1px, transparent 2px),
+        radial-gradient(circle at 40% 50%, rgba(255, 255, 255, 0.15) 1px, transparent 2px),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2) 1px, transparent 2px),
+        radial-gradient(circle at 60% 50%, rgba(255, 255, 255, 0.15) 1px, transparent 2px),
+        radial-gradient(circle at 70% 50%, rgba(255, 255, 255, 0.2) 1px, transparent 2px),
+        radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.15) 1px, transparent 2px),
+        radial-gradient(circle at 90% 50%, rgba(255, 255, 255, 0.2) 1px, transparent 2px);
+    border-radius: 1px;
+    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.subfolder:hover .mac-subfolder {
+    transform: scale(1.05) translateY(-3px) rotateY(5deg);
+    filter: drop-shadow(0 8px 12px rgba(4, 25, 80, 0.15));
+}
+
+/* Folder color classes for subfolders */
+.blue-folder,
+.green-folder,
+.yellow-folder,
+.red-folder,
+.purple-folder {
+    background-color: var(--primary);
+}
+
+.subfolder-name {
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    color: var(--text-dark);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary);
+    color: var(--text);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+/* Modal Header */
+.modal-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(10, 36, 99, 0.1);
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-left: 1.2rem;
+    font-weight: 500;
+}
+
+.modal-icon {
+    font-size: 2.2rem;
+    color: var(--primary);
+}
+
+.modal-icon i {
+    color: var(--primary) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .folders-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .subfolder-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 1.5rem;
+    }
+    
+    .welcome-section h1 {
+        font-size: 2rem;
+    }
+    
+    .mac-folder {
+        width: 100px;
+        height: 75px;
+    }
+    
+    .folder-content span {
+        font-size: 1.6rem;
+    }
+    
+    .mac-subfolder {
+        width: 70px;
+        height: 50px;
+    }
+    
+    .subfolder-content {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .folders-container,
+    .subfolder-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .welcome-section h1 {
+        font-size: 1.8rem;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    .mac-folder {
+        width: 90px;
+        height: 68px;
+    }
+    
+    .folder-tab {
+        height: 12px;
+        width: 25px;
+    }
+    
+    .folder-content span {
+        font-size: 1.4rem;
+    }
+    
+    .mac-subfolder {
+        width: 65px;
+        height: 45px;
+    }
+    
+    .subfolder-tab {
+        height: 8px;
+        width: 18px;
+        left: 12px;
+    }
+    
+    .subfolder-body {
+        top: 5px;
+        height: 40px;
+    }
+}
+
+/* Subtle animation for folder icons on hover */
+.folder:hover .folder-content i, 
+.subfolder:hover .subfolder-content i {
+    animation: pulse 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.9;
+        color: rgba(255, 255, 255, 0.9);
+    }
+    100% {
+        transform: scale(1.1);
+        opacity: 1;
+        color: rgba(255, 255, 255, 1);
+    }
+}
+
+.subfolder-content {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.2rem;
+    z-index: 2;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.subfolder:hover .subfolder-content i {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+}
+
+/* Enhanced high-tech hover states */
+.folder:hover .folder-body:before,
+.subfolder:hover .subfolder-body:before {
+    animation-duration: 1.5s;
+    opacity: 1;
+}
+
+/* Add digital noise texture */
+.mac-folder:before,
+.mac-subfolder:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    z-index: 1;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+}
+
+@keyframes scanLine {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Enhance staff folder subfolders */
+.two-column-layout .mac-subfolder {
+    width: 90px;
+    height: 70px;
+    margin-bottom: 1.2rem;
+}
+
+.two-column-layout .subfolder-tab {
+    left: 16px;
+    width: 28px;
+    height: 12px;
+}
+
+.two-column-layout .subfolder-body {
+    height: 64px;
+}
+
+.two-column-layout .subfolder-content {
+    font-size: 1.3rem;
+}
+
+/* Improved folder content */
+.folder-content {
+    position: absolute;
+    top: 33%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.8rem;
+    font-weight: bold;
+    z-index: 2;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.folder-content span {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+/* Enhanced folder hover effect */
+.folder:hover .mac-folder {
+    transform: scale(1.05) rotateY(12deg);
+    filter: drop-shadow(8px 10px 15px rgba(4, 25, 80, 0.25));
+} 

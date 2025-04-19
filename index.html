@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Version Bravo Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="media/logo.png" alt="Version Bravo Logo" id="logo-img">
+                Partners Portal
+            </div>
+            <!-- Navigation removed as requested -->
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="welcome-section">
+            <h1>Welcome to Version Bravo Portal</h1>
+            <p>Access your resources and materials by clicking on the folders below.</p>
+        </div>
+
+        <div class="folders-container">
+            <div class="folder" data-folder="cohort1">
+                <div class="folder-icon mac-folder">
+                    <div class="folder-tab"></div>
+                    <div class="folder-body"></div>
+                    <div class="folder-content">
+                        <span>#1</span>
+                    </div>
+                </div>
+                <p class="folder-name">Cohort #1</p>
+            </div>
+            
+            <div class="folder" data-folder="cohort2">
+                <div class="folder-icon mac-folder">
+                    <div class="folder-tab"></div>
+                    <div class="folder-body"></div>
+                    <div class="folder-content">
+                        <span>#2</span>
+                    </div>
+                </div>
+                <p class="folder-name">Cohort #2</p>
+            </div>
+            
+            <div class="folder" data-folder="cohort3">
+                <div class="folder-icon mac-folder">
+                    <div class="folder-tab"></div>
+                    <div class="folder-body"></div>
+                    <div class="folder-content">
+                        <span>#3</span>
+                    </div>
+                </div>
+                <p class="folder-name">Cohort #3</p>
+            </div>
+            
+            <div class="folder" data-folder="cohort4">
+                <div class="folder-icon mac-folder">
+                    <div class="folder-tab"></div>
+                    <div class="folder-body"></div>
+                    <div class="folder-content">
+                        <span>#4</span>
+                    </div>
+                </div>
+                <p class="folder-name">Cohort #4</p>
+            </div>
+            
+            <div class="folder" data-folder="staff">
+                <div class="folder-icon mac-folder staff-folder">
+                    <div class="folder-tab"></div>
+                    <div class="folder-body"></div>
+                    <div class="folder-content">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                </div>
+                <p class="folder-name">Staff</p>
+            </div>
+        </div>
+    </main>
+
+    <div id="folder-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="folder-content" class="subfolder-container">
+                <!-- Subfolder content will be loaded here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Version Bravo Partners Portal</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
